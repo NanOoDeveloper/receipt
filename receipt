@@ -1,0 +1,30 @@
+// components/Receipt.js
+import React, { useState } from 'react';
+import ReceiptHeader from './ReceiptHeader';
+import ReceiptDetails from './ReceiptDetails';
+import ReceiptSummary from './ReceiptSummary';
+
+const Receipt = () => {
+  const [logo, setBrandLogo] = useState('/your-logo.png');
+  const [brandName, setBrandName] = useState('Your Brand Name');
+  const [address, setAddress] = useState('Your Address');
+  const [date, setDate] = useState('2023-04-12');
+  const [hour, setHour] = useState('10:30 AM');
+  const [items, setItems] = useState([
+    { description: 'Item 1', quantity: 2, amount: 10.99 },
+    { description: 'Item 2', quantity: 1, amount: 15.50 },
+  ]);
+  const [subTotal, setSubTotal] = useState(36.48);
+  const [tax, setTax] = useState(2.88);
+  const [total, setTotal] = useState(39.36);
+
+  return (
+    <div>
+      <ReceiptHeader logo={logo} brandName={brandName} address={address} />
+      <ReceiptDetails date={date} hour={hour} items={items} />
+      <ReceiptSummary subTotal={subTotal} tax={tax} total={total} />
+    </div>
+  );
+};
+
+export default Receipt;
