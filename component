@@ -1,0 +1,14 @@
+// pages/index.js
+import React from 'react';
+import Receipt from '../components/Receipt';
+
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Receipt Generator</h1>
+      <Receipt />
+    </div>
+  );
+};
+
+export default HomePage;
